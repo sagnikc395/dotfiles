@@ -1,0 +1,26 @@
+[user]
+	name = sagnikc395
+	email = sagnikchatterjee395@gmail.com
+[init]
+    defaultBranch = main
+[diff]
+    tool = meld
+[difftool]
+    prompt = false
+[difftool "meld"]
+    trustExitCode = true
+    cmd = open -W -a Meld --args \"$LOCAL\" \"$REMOTE\"
+[merge]
+    tool = meld
+[mergetool]
+    prompt = false
+[mergetool "meld"]
+    trustExitCode = true
+    cmd = open -W -a Meld --args --auto-merge \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\"
+
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
